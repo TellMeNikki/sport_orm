@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sports Leagues</title>
+	</head>
+	<body>
+    <!--
+      <h1>Leagues</h1>
+      <ol>
+        {% for league in leagues %}
+          <li>{{league.name}}</li>
+        {% empty %}
+          <p>No leagues found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+        {% endfor %}
+      </ol>
+      <h1>Teams</h1>
+      <ol>
+        {% for team in teams %}
+          <li>{{team.location}} {{team.team_name}}</li>
+        {% empty %}
+          <p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+        {% endfor %}
+      </ol>
+      <h1>Players</h1>
+      <ol>
+        {% for player in players %}
+          <li>{{player.first_name}} {{player.last_name}}</li>
+        {% empty %}
+          <p>No teams found.  Try <code>python manage.py loaddata data.json</code>, or, if that doesn't work, going <a href="{% url 'make_data' %}">here</a> (but be prepared to wait).</p>
+        {% endfor %}
+      </ol>
+    -->
+    <h3>Leagues</h3>
+    <ul>
+      <h4>1. todas las ligas de béisbol</h4>
+      {% for liga in baseball_leagues %}
+        <ol>{{liga.name}}</ol>
+      {% endfor %}
+      <h4>2. todas las ligas de mujeres</h4>
+      {% for liga in women_leagues %}
+        <ol>{{liga.name}}</ol>
+      {% endfor %}
+      <h4>3. todas las ligas donde el deporte es cualquier tipo de hockey</h4>
+      {% for liga in hockey_leagues %}
+      <ol>{{liga.name}}</ol>
+      {% endfor %}
+      <h4>4. todas las ligas donde el deporte no sea football</h4>
+      {% for liga in no_football_leagues %}
+      <ol>{{liga.name}}</ol>
+      {% endfor %}
+      <h4>5. todas las ligas que se llaman "conferencias"</h4>
+      {% for liga in conference_leagues  %}
+      <ol>{{liga.name}}</ol>
+      {% endfor %}
+      <h4>6. todas las ligas de la región atlántica"</h4>
+      {% for liga in atlantic_leagues %}
+      <ol>{{liga.name}}</ol>
+      {% endfor %}
+    </ul>
+    <h3>Teams</h3>
+    <ul>
+      <h4>7. todos los equipos con sede en Dallas </h4>
+      {% for team in dallas_location %}
+      <ol>{{team.location}} {{team.team_name}}</ol>
+      {% endfor %}
+      <h4>8. todos los equipos nombraron los Raptors  </h4>
+      {% for team in raptors_team %}
+      <ol>{{team.location}} {{team.team_name}}</ol>
+      {% endfor %}
+      <h4>9. todos los equipos cuya ubicación incluye "Ciudad"  </h4>
+      {% for team in with_city %}
+      <ol>{{team.location}} {{team.team_name}}</ol>
+      {% endfor %}
+      <h4>10. todos los equipos cuyos nombres comienzan con "T" </h4>
+      {% for team in team_t_start %}
+      <ol>{{team.location}} {{team.team_name}}</ol>
+      {% endfor %}
+      <h4>11. todos los equipos, ordenados alfabéticamente por ubicación </h4>
+      {% for team in teams_by_location %}
+      <ol>{{team.location}} {{team.team_name}}</ol>
+      {% endfor %}
+      <h4>12. todos los equipos, ordenados por nombre de equipo en orden alfabético inverso  </h4>
+      {% for team in team_desc %}
+      <ol>{{team.location}} {{team.team_name}}</ol>
+      {% endfor %}
+    </ul>
+    <h3>Players</h3>
+    <ul>
+      <h4>13. cada jugador con apellido "Cooper"</h4>
+      {% for player in cooper_last_name %}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>14. cada jugador con nombre "Joshua"</h4>
+      {% for player in joshua_name %}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>15. todos los jugadores con el apellido "Cooper" EXCEPTO aquellos con "Joshua" como primer nombre</h4>
+      {% for player in cooper_ex_joshua %}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>16. todos los jugadores con nombre "Alexander" O nombre "Wyatt"</h4>
+      {% for player in alexander_wyatt %}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+    </ul>
+
+  </body>
+</html> 
