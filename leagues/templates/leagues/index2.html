@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Sports Leagues 2</title>
+	</head>
+	<body>
+
+    <a class="display-1 text-dark border" aria-current="page" href="/"> 1a parte</a>
+    <ul>
+      <h4>1.todos los equipos en la Atlantic Soccer Conference</h4>
+      {% for team in atlantic_soccer %}
+        <ol>{{team.team_name}}</ol>
+      {% endfor %}
+      <h4>2. todos los jugadores (actuales) en los Boston Penguins</h4>
+      {% for player in boston_penguins %}
+        <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>3. todos los jugadores (actuales) en la International Collegiate Baseball Conference</h4>
+      {% for player in international_CBC %}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>4. todos los jugadores (actuales) en la Conferencia Americana de Fútbol Amateur con el apellido "López"</h4>
+      {% for player in conferencia_lopez %}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>5. todos los jugadores de fútbol</h4>
+      {% for player in football_players %}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>6. todos los equipos con un jugador (actual) llamado "Sophia"</h4>
+      {% for team in sophia_teams %}
+      <ol>{{team.team_name}}</ol>
+      {% endfor %}
+    </ul>
+    <ul>
+      <h4>7. todas las ligas con un jugador (actual) llamado "Sophia"</h4>
+      {% for liga in sophia_leagues %}
+      <ol>{{liga.name}}</ol>
+      {% endfor %}
+      <h4>8. todos con el apellido "Flores" que NO (actualmente) juegan para los Washington Roughriders</h4>
+      {% for player in flores_no_WR %}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>9. todos los equipos, pasados y presentes, con los que Samuel Evans ha jugado</h4>
+      {% for team in samuel_evans_teams %}
+      <ol> {{team.team_name}}</ol>
+      {% endfor %}
+      <h4>10. todos los jugadores, pasados y presentes, con los gatos tigre de Manitoba</h4>
+      {% for player in tiger_cat %}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>11. todos los jugadores que anteriormente estaban (pero que no lo están) con los Wichita Vikings</h4>
+      {% for player in wichita %}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>12. cada equipo para el que Jacob Gray jugó antes de unirse a los Oregon Colts </h4>
+      {% for team in teams_jg %}
+      <ol>{{team.team_name}}</ol>
+      {% endfor %}
+    </ul>
+    <ul>
+      <h4>13. todos llamados "Joshua" que alguna vez han jugado en la Federación Atlántica de Jugadores de Béisbol Amateur</h4>
+      {% for player in joshua%}
+      <ol>{{player.first_name}} {{player.last_name}}</ol>
+      {% endfor %}
+      <h4>14. todos los equipos que han tenido 12 o más jugadores, pasados y presentes. (SUGERENCIA: busque la función de anotación de Django).</h4>
+      {% for team in teams_with_12plus %}
+      <ol>{{team.team_name}}</ol>
+      {% endfor %}
+      <h4>15. todos los jugadores y el número de equipos para los que jugó, ordenados por la cantidad de equipos para los que han jugado</h4>
+      {% for player in teams4player %}
+      <ol>{{player.first_name}} {{player.last_name}} - {{player.all_teams__count}} equipo/s</ol>
+      {% endfor %}
+    </ul>
+  </body>
+</html> 
